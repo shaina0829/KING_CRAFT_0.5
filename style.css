@@ -1,0 +1,243 @@
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background: #dce9df;
+  font-family: "Gowun Dodum", sans-serif;
+}
+
+#game-container {
+  width: 900px;
+  max-width: 95vw;
+  min-height: 550px;
+
+  background: #f5f5e9;
+  border: 5px solid #245b46;
+
+  box-shadow: 10px 10px 0 #a6bdae;
+
+  padding: 30px;
+  text-align: center;
+}
+
+.screen {
+  width: 100%;
+}
+
+.hidden {
+  display: none;
+}
+
+/* 시작 화면 */
+
+.game-label {
+  font-family: "Press Start 2P", monospace;
+  font-size: 13px;
+  color: #3b8060;
+  margin-top: 20px;
+}
+
+h1 {
+  font-size: 56px;
+  line-height: 1.3;
+  color: #174d38;
+  margin: 35px 0 20px;
+}
+
+.story {
+  font-size: 18px;
+  line-height: 1.8;
+  color: #596b60;
+}
+
+/* 조작 설명 */
+
+.controls {
+  margin: 30px auto;
+  padding: 18px;
+
+  max-width: 480px;
+
+  background: #e5eddf;
+  border: 3px solid #39765a;
+}
+
+.controls h2 {
+  font-family: "Press Start 2P", monospace;
+  font-size: 13px;
+  color: #245b46;
+  margin-bottom: 20px;
+}
+
+.controls p {
+  font-size: 16px;
+}
+
+.key {
+  display: inline-block;
+  min-width: 75px;
+  padding: 8px;
+
+  background: white;
+  border: 2px solid #245b46;
+  box-shadow: 3px 3px 0 #9ab7a2;
+
+  margin-right: 12px;
+  font-weight: bold;
+}
+
+/* 버튼 */
+
+button {
+  padding: 17px 30px;
+
+  background: #245b46;
+  color: white;
+
+  border: none;
+  box-shadow: 5px 5px 0 #9ab7a2;
+
+  font-family: "Press Start 2P", monospace;
+  font-size: 14px;
+
+  cursor: pointer;
+}
+
+button:hover {
+  background: #3c8461;
+}
+
+button:active {
+  transform: translate(3px, 3px);
+  box-shadow: 2px 2px 0 #9ab7a2;
+}
+
+/* 플레이 화면 */
+
+.game-header {
+  display: flex;
+  justify-content: space-between;
+
+  padding: 15px;
+  font-weight: bold;
+  color: #245b46;
+}
+
+#game-canvas {
+  display: block;
+  width: 100%;
+  max-width: 800px;
+  height: auto;
+  margin: 0 auto;
+
+  background: #cce7e0;
+  border: 4px solid #245b46;
+
+  image-rendering: pixelated;
+}
+
+/* 결과 화면 */
+
+#result-screen {
+  padding-top: 120px;
+}
+
+#result-title {
+  font-size: 38px;
+  color: #245b46;
+}
+
+#result-message {
+  font-size: 20px;
+  margin: 30px 0;
+}
+
+@media (max-width: 600px) {
+  #game-container {
+    padding: 16px;
+    min-height: 500px;
+  }
+
+  h1 {
+    font-size: 38px;
+  }
+
+  .story {
+    font-size: 15px;
+  }
+
+  .controls p {
+    font-size: 13px;
+  }
+}
+
+/* HP 표시 */
+
+.hp-container {
+  width: 100%;
+  max-width: 800px;
+  margin: 12px auto;
+}
+
+.hp-label {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 7px;
+
+  font-family: "Press Start 2P", monospace;
+  font-size: 11px;
+  color: #286349;
+}
+
+.hp-bar {
+  width: 100%;
+  height: 22px;
+
+  background: #e5e5e5;
+  border: 3px solid #286349;
+
+  overflow: hidden;
+}
+
+#hp-fill {
+  width: 100%;
+  height: 100%;
+
+  background: #4cae72;
+  transition: width 0.2s;
+}
+
+#hp-fill.low {
+  background: #e2a044;
+}
+
+#hp-fill.danger {
+  background: #d85d59;
+}
+/* 숨김 상태 우선 적용 */
+.screen.hidden,
+.ewha-scene.hidden {
+  display: none;
+}
+
+/* HP 바를 게임 화면 너비에 맞춤 */
+.hp-container {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 800px;
+  margin: 12px auto;
+}
+
+#hp-fill {
+  width: 100%;
+  height: 100%;
+}
